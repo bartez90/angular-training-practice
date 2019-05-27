@@ -1,26 +1,39 @@
 <div class="main-box">
-    <h3 class="heading" (click)="changeHeading()">{{ heading }}</h3>
-    <div>
+    <h3 [ngClass]="{'second-heading': isHeadingSecond()}" class="heading" (click)="changeHeading()">{{ heading }}</h3>
+    <div *ngIf="heading === defaultHeading">
         <ul class="books-list">
-            <li>Władca pierścieni</li>
-            <li>Hobbit</li>
+            <li *ngFor="let book of books">{{ book }}</li>
         </ul>
-        <p class="books-count">Ordered books count: {{ booksCount }}</p>
-        <button [disabled]="noBooks" class="btn">Delete all</button>
+        <p class="books-count">Ordered books count: {{ books.length }}</p>
+        <button [disabled]="!books.length" class="btn" (click)="deleteBooks()">Delete all</button>
+    </div>
+    <div *ngIf="isHeadingSecond()">
+        <p [ngStyle]="{'font-weight': '700'}">... nope, too low budget. Instead random two-way data binding: {{ randomTwoWayBinding }} </p>
+        <input [(ngModel)]="randomTwoWayBinding" type="text">
     </div>
 </div>
 
-
 <div class="info">
     <p class="info-paragraph">
-        W componencie utworzyć własność, która będzie przetrzymywała ilość książek, ustawić na sztywno np. na 2
-        i przekazać ją do templatu w "Ordered books count: 2"
+        Utworzyć array, który będzie przetrzymywał nazwy książek, dodać na sztywno parę i przekazać do listy.
     </p>
     <p class="info-paragraph">
-        Utworzyć własność, która definiuje czy przycisk "Delete all" jest włączony i za jej pomocą zrobić tak, żeby był wyłączony
-        (będzie wyłączony w momencie, gdy na liście nie będzie żadnych książek).
+        Jeśli nie ma żadnych książek na liście to przycisk "Delete all" jest wyłączony, jeśli jest przynajmniej jedna to jest włączony.
     </p>
     <p class="info-paragraph">
-        Przy kliknięciu na "Books orders" tekst zmienia się na "Some awesome functionality will be here..."
+        "Delete all" usuwa wszystkie książki z listy. 
+    </p>
+    <p class="info-paragraph">
+        W "Ordered books count:" wyświetlona jest aktualna liczba książek.
+    </p>
+    <p class="info-paragraph">
+        Przy kliknieciu w heading "Books orders/Some awesome ..." zmiania się także dolna część. <br>
+        Dla "Some awesome..." jest randomowy tekst oraz input z two-way data binding (trzeba coś zaimportować, żeby działało).
+    </p>
+    <p class="info-paragraph">
+        Dla headingu "Some awesome" dodać klasę z background-color (zróbcie sobie taką klasę w css). Heading "Books orders" bez zmian.
+    </p>
+    <p class="info-paragraph">
+        Tekst pod headingiem "Some awesome..." pogrubić za pomocą ngStyle (własność css - font-weight: 700).
     </p>
 </div>

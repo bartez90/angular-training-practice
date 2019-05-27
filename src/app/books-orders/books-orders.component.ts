@@ -6,11 +6,13 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./books-orders.component.scss']
 })
 export class BooksOrdersComponent implements OnInit {
-    booksCount = 2;
-    noBooks = true;
+    books: string[] = ['Władca pierścieni', 'Hobbit', 'Gra o tron'];
+    // booksCount = 2;
+    // noBooks = true;
     defaultHeading = 'Books orders:';
     secondHeading = 'Some awesome functionality will be here...';
     heading = this.defaultHeading;
+    randomTwoWayBinding: string;
 
     constructor() { }
 
@@ -19,5 +21,13 @@ export class BooksOrdersComponent implements OnInit {
 
     changeHeading() {
         this.heading = this.heading === this.defaultHeading ? this.secondHeading : this.defaultHeading;
+    }
+
+    deleteBooks() {
+        this.books.splice(0);
+    }
+
+    isHeadingSecond(): boolean {
+        return this.heading === this.secondHeading ? true : false;
     }
 }
