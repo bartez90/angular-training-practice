@@ -1,0 +1,38 @@
+.main-box {
+    width: 40%;
+    margin: 80px auto 40px auto;
+    padding: 2%;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: blue;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &-link {
+        font-size: 26px;
+        color: white;
+        text-decoration: none;
+        margin: 0 30px;
+        cursor: pointer;
+
+        &-active {
+            color: red;
+        }
+    }
+}
+
+.info {
+    text-align: center;
+
+    &-paragraph {
+        margin-top: 10px;
+    }
+}

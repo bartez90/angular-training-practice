@@ -1,1 +1,28 @@
-<app-books-orders></app-books-orders>
+<div class="navbar">
+    <a class="navbar-link" routerLinkActive="navbar-link-active" [routerLinkActiveOptions]="{exact: true}" routerLink="">Books</a>
+    <a class="navbar-link" routerLinkActive="navbar-link-active" routerLink="books-orders">Orders</a>
+    <a class="navbar-link" routerLinkActive="navbar-link-active" routerLink="user">My data</a>
+</div>
+
+<div class="main-box">
+    <router-outlet></router-outlet>   
+</div>
+
+<div class="info">
+    <p class="info-paragraph">
+        Na górze strony utworzyć navbar z linkami: "Books", "Orders", "My data". Można to zrobić bezpośrednio w AppComponent albo jako osobny component.
+    </p>
+    <p class="info-paragraph">
+        Utworzyć dwa componenty: "books" (lista wszystkich książek możliwych do zamówienia) oraz "user" (edycja danych użytkownika). 
+    </p>
+    <p class="info-paragraph">
+        Dodać "routes" dla każdego linku w navbarze oraz przekierowanie do "books", jeśli użytkownik wpisze w adresie nieistniejący route. <br>
+        Można to zrobić w AppModule albo w zewnętrznym module i importować.
+    </p>
+    <p class="info-paragraph">
+        Po kliknięciu w link w navbarze powinien pokazywać się odpowiedni component. Zaznaczyć, który link jest aktualnie aktywny.
+    </p>
+    <p class="info-paragraph">
+        W "Orders" w momencie, gdy naciśniemy "Delete all" albo usuniemy ostatnią książkę za pomocą "X", aplikacja powinna przejść do "Books".
+    </p>
+</div>

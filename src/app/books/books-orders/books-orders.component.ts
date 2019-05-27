@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-books-orders',
@@ -14,7 +15,7 @@ export class BooksOrdersComponent implements OnInit {
     heading = this.defaultHeading;
     randomTwoWayBinding: string;
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     ngOnInit() {
     }
@@ -25,6 +26,7 @@ export class BooksOrdersComponent implements OnInit {
 
     deleteBooks() {
         this.books.splice(0);
+        this.router.navigate(['']);
     }
 
     isHeadingSecond(): boolean {
@@ -34,5 +36,9 @@ export class BooksOrdersComponent implements OnInit {
     onBookDelete(book) {
         const index = this.books.indexOf(book);
         this.books.splice(index, 1);
+
+        if (!this.books.length) {
+            this.router.navigate(['']);
+        }
     }
 }
