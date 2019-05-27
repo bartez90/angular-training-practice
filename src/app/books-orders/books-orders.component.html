@@ -1,18 +1,26 @@
 <div class="main-box">
-    <h3 class="heading">Books orders:</h3>
+    <h3 class="heading" (click)="changeHeading()">{{ heading }}</h3>
     <div>
         <ul class="books-list">
             <li>Władca pierścieni</li>
             <li>Hobbit</li>
         </ul>
-        <p class="books-count">Ordered books count: X</p>
-        <button class="btn">Delete all</button>
+        <p class="books-count">Ordered books count: {{ booksCount }}</p>
+        <button [disabled]="noBooks" class="btn">Delete all</button>
     </div>
 </div>
 
 
 <div class="info">
-    <p class="info-paragraph">Utworzyć ręcznie nowy component i skonfigurować go.</p>
-    <p class="info-paragraph">Selectować utworzony component w "app.component".</p>
-    <p class="info-paragraph">W waszym componencie nakodzić template (HTML) i wystylować jak chcecie.</p>
+    <p class="info-paragraph">
+        W componencie utworzyć własność, która będzie przetrzymywała ilość książek, ustawić na sztywno np. na 2
+        i przekazać ją do templatu w "Ordered books count: 2"
+    </p>
+    <p class="info-paragraph">
+        Utworzyć własność, która definiuje czy przycisk "Delete all" jest włączony i za jej pomocą zrobić tak, żeby był wyłączony
+        (będzie wyłączony w momencie, gdy na liście nie będzie żadnych książek).
+    </p>
+    <p class="info-paragraph">
+        Przy kliknięciu na "Books orders" tekst zmienia się na "Some awesome functionality will be here..."
+    </p>
 </div>
