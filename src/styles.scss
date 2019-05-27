@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 22px;
+}
+
+input {
+    font-size: inherit;
+}
+
+.btn {
+    font-size: inherit;
+    width: 200px;
+    border: 0;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    transition: all 0.1s;
+    outline: none;
+
+    &:disabled {
+        opacity: .5;
+    }
+
+    &:active {
+        transform: translateY(-2px);
+    }
+}
+
