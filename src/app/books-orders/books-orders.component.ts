@@ -30,4 +30,9 @@ export class BooksOrdersComponent implements OnInit {
     isHeadingSecond(): boolean {
         return this.heading === this.secondHeading ? true : false;
     }
+
+    onBookDelete(book) {
+        const index = this.books.indexOf(book);
+        this.books.splice(index, 1);
+    }
 }

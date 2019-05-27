@@ -2,7 +2,9 @@
     <h3 [ngClass]="{'second-heading': isHeadingSecond()}" class="heading" (click)="changeHeading()">{{ heading }}</h3>
     <div *ngIf="heading === defaultHeading">
         <ul class="books-list">
-            <li *ngFor="let book of books">{{ book }}</li>
+            <li *ngFor="let book of books">
+                <app-book-item [book]="book" (bookDeleted)="onBookDelete($event)"></app-book-item>
+            </li>
         </ul>
         <p class="books-count">Ordered books count: {{ books.length }}</p>
         <button [disabled]="!books.length" class="btn" (click)="deleteBooks()">Delete all</button>
@@ -15,25 +17,14 @@
 
 <div class="info">
     <p class="info-paragraph">
-        Utworzyć array, który będzie przetrzymywał nazwy książek, dodać na sztywno parę i przekazać do listy.
+        Utworzyć nowy component, który będzie pełnił rolę itemu w liście książek i zawierał nazwę książki oraz przycisk do usuwania.
+        Dodać ten component jako item w componencie "Books orders".
     </p>
     <p class="info-paragraph">
-        Jeśli nie ma żadnych książek na liście to przycisk "Delete all" jest wyłączony, jeśli jest przynajmniej jedna to jest włączony.
+        Przekazać nazwę książki dla każdego itemu listy do nowego componentu.
     </p>
     <p class="info-paragraph">
-        "Delete all" usuwa wszystkie książki z listy. 
-    </p>
-    <p class="info-paragraph">
-        W "Ordered books count:" wyświetlona jest aktualna liczba książek.
-    </p>
-    <p class="info-paragraph">
-        Przy kliknieciu w heading "Books orders/Some awesome ..." zmiania się także dolna część. <br>
-        Dla "Some awesome..." jest randomowy tekst oraz input z two-way data binding (trzeba coś zaimportować, żeby działało).
-    </p>
-    <p class="info-paragraph">
-        Dla headingu "Some awesome" dodać klasę z background-color (zróbcie sobie taką klasę w css). Heading "Books orders" bez zmian.
-    </p>
-    <p class="info-paragraph">
-        Tekst pod headingiem "Some awesome..." pogrubić za pomocą ngStyle (własność css - font-weight: 700).
+        Przy kliknięciu w przycisk "delete" w nowym componencie, z componentu "Books orders" usuwana jest dana książka. <br>
+        Zakładamy, że nazwa książki jest unikalna i można po niej usuwać.
     </p>
 </div>
