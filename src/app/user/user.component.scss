@@ -1,0 +1,21 @@
+.form-group {
+    margin-top: 6px;
+}
+
+.margin-left-medium {
+    margin-left: 8px;
+}
+
+.margin-top-large {
+    margin-top: 16px;
+}
+
+.update-info {
+    margin-top: 6px;
+    text-align: center;
+    color: #0dc603;
+}
+
+:not(.update-form).ng-invalid {
+    border: 1px solid red;
+}

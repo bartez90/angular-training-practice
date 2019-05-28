@@ -10,21 +10,22 @@
 
 <div class="info">
     <p class="info-paragraph">
-        Zakładamy, że nazwy książek są unikalne i można dodawać, usuwać po nazwie.
+        Dla componentu "User" w template zrobić formę. Pola "Mail", "Nickname", "Package" wymygane oraz "Mail" jako email. 
     </p>
     <p class="info-paragraph">
-        Utworzyć serwis oraz dodać w nim dwa array'e: dla "books" (książki możliwe do zamówienia) oraz dla "orders" (zamówione). <br>
-        Na sztywno dodać parę książek dla "books", "orders" powinno być puste.
+        Jeśli forma jest invalid to przycisk "Save" jest wyłączony oraz zaznaczane są niepoprawne pola. <br>
+        Jeśli jest valid to po przyciśnięciu "Save" na dole pojawia się odpowiedni komunikat.
     </p>
     <p class="info-paragraph">
-        W componencie "Books" utworzyć listę i wyświetlić w niej "books" z serwisu. <br>
-        Przekazać takżę listę dla "orders" z serwisu do componentu (array w componencie "Orders" powinien być pusty i wszystko pobierane z serwisu).
+        Po kliknięciu w "Propose nickname" wyświetlana jest propozycja (parę propozycji dodane na sztywno w componencie).
     </p>
     <p class="info-paragraph">
-        W componencie "Books" przy kliknięciu w daną książkę jest ona usuwana i dodawana do listy w componencie "Orders".
+        Przycisk "Add code" jest wyłączony i włączany dopiero w momencie, gdy użytkownik wpisze odpowiedni kod (sprawdzane przy każdym znaku, parę kodów na sztywno). <br>
+        Po przyciśnięciu "Add code" wyświetlany jest odpowiedni komunikat, a linia do wprowadzania kodu znika.
     </p>
     <p class="info-paragraph">
-        W componencie "Orders" przy kliknięciu na "X" dana książka jest usuwana i dodawana do listy w "Books". <br>
-        Przy kliknięciu na "Delete all" wszystkie książki są usuwane i dodawane do listy w "Books".
+        Utworzyć serwis dla "user" oraz model odpowiadający danym w formie (uwzględnić także czy kod został dodany). <br>
+        Podczas zapisu formy przekazać dane do serwisu, a podczas przechodzenie do componentu "user" wyświetlić wczesniej zapisane dane. <br>
+        Jeśli kod został już wcześniej dodany wyświetlać tylko komunikat.
     </p>
 </div>

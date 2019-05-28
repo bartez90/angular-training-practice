@@ -9,6 +9,7 @@ import { BooksComponent } from './books/books.component';
 import { UserComponent } from './user/user.component';
 import { AppRouting } from './app-routing.module';
 import { BooksService } from './books/books.service';
+import { UserService } from './user/user.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { BooksService } from './books/books.service';
     FormsModule,
     AppRouting
   ],
-  providers: [BooksService],
+  providers: [BooksService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
