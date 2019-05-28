@@ -8,6 +8,7 @@ import { BookItemComponent } from './books/books-orders/book-item/book-item.comp
 import { BooksComponent } from './books/books.component';
 import { UserComponent } from './user/user.component';
 import { AppRouting } from './app-routing.module';
+import { BooksService } from './books/books.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { AppRouting } from './app-routing.module';
     FormsModule,
     AppRouting
   ],
-  providers: [],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

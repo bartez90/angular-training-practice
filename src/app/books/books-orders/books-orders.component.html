@@ -7,7 +7,7 @@
             </li>
         </ul>
         <p class="books-count">Ordered books count: {{ books.length }}</p>
-        <button [disabled]="!books.length" class="btn" (click)="deleteBooks()">Delete all</button>
+        <button [disabled]="!books.length" class="btn" (click)="onBooksDelete()">Delete all</button>
     </div>
     <div *ngIf="isHeadingSecond()">
         <p [ngStyle]="{'font-weight': '700'}">... nope, too low budget. Instead random two-way data binding: {{ randomTwoWayBinding }} </p>

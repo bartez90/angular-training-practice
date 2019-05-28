@@ -1,3 +1,6 @@
-<p>
-  books works!
-</p>
+<div>
+    <h2>Availible books:</h2>
+    <ul>
+        <li class="book-item" *ngFor="let book of books" (click)="onBookOrder(book)">{{ book }}</li>
+    </ul>
+</div>

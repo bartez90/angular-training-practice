@@ -5,24 +5,26 @@
 </div>
 
 <div class="main-box">
-    <router-outlet></router-outlet>   
+    <router-outlet></router-outlet>
 </div>
 
 <div class="info">
     <p class="info-paragraph">
-        Na górze strony utworzyć navbar z linkami: "Books", "Orders", "My data". Można to zrobić bezpośrednio w AppComponent albo jako osobny component.
+        Zakładamy, że nazwy książek są unikalne i można dodawać, usuwać po nazwie.
     </p>
     <p class="info-paragraph">
-        Utworzyć dwa componenty: "books" (lista wszystkich książek możliwych do zamówienia) oraz "user" (edycja danych użytkownika). 
+        Utworzyć serwis oraz dodać w nim dwa array'e: dla "books" (książki możliwe do zamówienia) oraz dla "orders" (zamówione). <br>
+        Na sztywno dodać parę książek dla "books", "orders" powinno być puste.
     </p>
     <p class="info-paragraph">
-        Dodać "routes" dla każdego linku w navbarze oraz przekierowanie do "books", jeśli użytkownik wpisze w adresie nieistniejący route. <br>
-        Można to zrobić w AppModule albo w zewnętrznym module i importować.
+        W componencie "Books" utworzyć listę i wyświetlić w niej "books" z serwisu. <br>
+        Przekazać takżę listę dla "orders" z serwisu do componentu (array w componencie "Orders" powinien być pusty i wszystko pobierane z serwisu).
     </p>
     <p class="info-paragraph">
-        Po kliknięciu w link w navbarze powinien pokazywać się odpowiedni component. Zaznaczyć, który link jest aktualnie aktywny.
+        W componencie "Books" przy kliknięciu w daną książkę jest ona usuwana i dodawana do listy w componencie "Orders".
     </p>
     <p class="info-paragraph">
-        W "Orders" w momencie, gdy naciśniemy "Delete all" albo usuniemy ostatnią książkę za pomocą "X", aplikacja powinna przejść do "Books".
+        W componencie "Orders" przy kliknięciu na "X" dana książka jest usuwana i dodawana do listy w "Books". <br>
+        Przy kliknięciu na "Delete all" wszystkie książki są usuwane i dodawane do listy w "Books".
     </p>
 </div>
